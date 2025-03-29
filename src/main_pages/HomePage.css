@@ -1,0 +1,220 @@
+/* HomePage.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .home-page {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Clinic Introduction Styles */
+  .clinic-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 5%;
+    background-color: #f8f9fa;
+  }
+  
+  .intro-text {
+    flex: 1;
+    padding-right: 2rem;
+  }
+  
+  .intro-text h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  .intro-text p {
+    color: #7f8c8d;
+    line-height: 1.6;
+  }
+  
+  .intro-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .image-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+  }
+  
+  /* Services Section Styles */
+  .services-section {
+    padding: 3rem 5%;
+  }
+  
+  .services-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .service-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: auto;
+  }
+  
+  .service-card h3 {
+    color: #3498db;
+    margin-bottom: 0.5rem;
+  }
+  
+  .service-card.expanded {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+  }
+  
+  .service-description {
+    margin-top: 1rem;
+    color: #7f8c8d;
+    line-height: 1.5;
+  }
+  
+  /* Doctors Section Styles */
+  .doctors-section {
+    padding: 3rem 5%;
+    background-color: #f8f9fa;
+  }
+  
+  .doctors-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+  }
+  
+  .doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .doctor-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .doctor-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .doctor-image-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .doctor-card h3 {
+    padding: 1rem 1rem 0.5rem 1rem;
+    color: #2c3e50;
+  }
+  
+  .doctor-card p {
+    padding: 0 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .specialization {
+    color: #3498db;
+    font-weight: bold;
+  }
+  
+  .experience {
+    color: #7f8c8d;
+  }
+  
+  .details {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    padding-bottom: 1rem;
+  }
+  
+  /* Accreditations Section Styles */
+  .accreditations-section {
+    padding: 3rem 5%;
+  }
+  
+  .accreditations-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+  }
+  
+  .accreditations-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .accreditation-item {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 200px;
+  }
+  
+  .accreditation-item h3 {
+    color: #3498db;
+    margin-bottom: 0.5rem;
+  }
+  
+  .accreditation-item p {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .clinic-intro {
+      flex-direction: column;
+    }
+    
+    .intro-text {
+      padding-right: 0;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .services-grid, .doctors-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .accreditations-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
