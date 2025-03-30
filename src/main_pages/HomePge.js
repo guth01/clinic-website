@@ -9,7 +9,19 @@ const HomePage = () => {
     { id: 3, name: "Dermatology", description: "Diagnosis and treatment of skin, hair, and nail conditions using the latest techniques and medications." },
     { id: 4, name: "Pediatrics", description: "Complete healthcare for infants, children, and adolescents, focusing on growth, development, and disease prevention." },
     { id: 5, name: "Physiotherapy", description: "Rehabilitative treatments to improve mobility, strength, and function through specialized techniques and exercises." },
-    { id: 6, name: "Dentistry", description: "Comprehensive dental care including preventive, restorative, and cosmetic procedures for all ages." }
+    { id: 6, name: "Dentistry", description: "Comprehensive dental care including preventive, restorative, and cosmetic procedures for all ages." },
+    { 
+      id: 7, 
+      name: "Gynecology", 
+      description: "Women's healthcare services, including reproductive health, prenatal care, and treatment for gynecological conditions." 
+    },
+    
+    { 
+      id: 8, 
+      name: "Mental Health & Counseling", 
+      description: "Providing psychological support, therapy, and counseling for individuals dealing with stress, anxiety, depression, and other mental health concerns." 
+    }
+    
   ];
 
   // Sample doctor data - will need backend integration

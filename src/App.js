@@ -5,6 +5,9 @@ import DoctorsPage from './main_pages/DoctorsPage.js';
 import AppointmentBookingPage from './main_pages/AppointmentBookingPage.js'; // Import the new component
 import Header from './components/Header.js';
 import Footer from './components/Footer.js';
+import Login from './components/auth/Login';
+import Signup from './components/auth/Signup';
+import ProtectedRoute from './components/auth/ProtectedRoute.js';
 import './App.css';
 function App() {
   return (
@@ -14,7 +17,13 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/doctors" element={<DoctorsPage />} />
-          <Route path="/book-test" element={<AppointmentBookingPage />} /> {/* Add the new route */}
+          <Route path="/book-test" element={
+          //<ProtectedRoute>
+            <AppointmentBookingPage />
+          //</ProtectedRoute>
+          } />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} /> {/* Add the new route */}
           {/* Future routes will be added here */}
           {/*
             <Route path="/services" element={<ServicesPage />} />

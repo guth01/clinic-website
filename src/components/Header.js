@@ -1,59 +1,50 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Navigation from './Navigation.js';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/Authcontext.js';
+import Navigation from './Navigation'; // Import your Navigation component
 import './Header.css';
+import logo from '../assets/logo.jpg';
 
 const Header = () => {
-  // State for logged-in user - will need backend integration
-  const [loggedInUser, setLoggedInUser] = useState({
-    name: "John Doe", // This will come from authentication system
-    isLoggedIn: true // This will be determined by authentication
-  });
+  const { currentUser, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  // State for user dropdown menu
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-  // Function for logout - will need backend integration
   const handleLogout = () => {
-    // Will need to connect to authentication service
-    console.log("Logout clicked");
-    setLoggedInUser({ name: "", isLoggedIn: false });
-    // Backend API call would go here to invalidate session
+    logout();
+    navigate('/');
   };
 
   return (
     <>
-      {/* Header Bar */}
       <header className="header">
-        <div className="logo">
-          <h1>HART Clinic</h1>
-          <p>Expertise Closer to You.</p>
-        </div>
-        <div className="account-section">
-          {loggedInUser.isLoggedIn ? (
-            <div className="user-account">
-              <div className="user-info" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
-                <i className="user-icon">👤</i>
-                <span>{loggedInUser.name}</span>
+        <div className="header-container">
+          <div className="logo-container">
+            <Link to="/">
+              <img src={logo} alt="HART Clinic" className="logo" />
+            </Link>
+            <div className="brand">
+              <h1>HART Clinic</h1>
+              <p>Expertise Closer to You.</p>
+            </div>
+          </div>
+          
+          <div className="user-section">
+            {currentUser ? (
+              <div className="user-info">
+                <span>Welcome, {currentUser.name}</span>
+                <button onClick={handleLogout} className="logout-btn">Logout</button>
               </div>
-              {isDropdownOpen && (
-                <div className="dropdown-menu">
-                  <button onClick={handleLogout} className="logout-btn">Logout</button>
-                </div>
-              )}
-            </div>
-          ) : (
-            <div className="login-section">
-              {/* Login/Register buttons - will link to auth pages */}
-                <a href="/login" className="login-btn">Login</a>
-                <a href="/register" className="register-btn">Register</a>
-
-            </div>
-          )}
+            ) : (
+              <div className="auth-links">
+                <Link to="/login" className="auth-link">Login</Link>
+                <Link to="/signup" className="auth-link signup">Sign Up</Link>
+              </div>
+            )}
+          </div>
         </div>
       </header>
       
-      {/* Navigation Menu */}
+      {/* Use the separate Navigation component */}
       <Navigation />
     </>
   );
