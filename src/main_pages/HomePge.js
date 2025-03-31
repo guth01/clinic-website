@@ -26,10 +26,10 @@ const HomePage = () => {
 
   // Sample doctor data - will need backend integration
   const doctors = [
-    { id: 1, name: "Dr. Priya Sharma", specialization: "General Medicine", experience: "15+ years", details: "MBBS, MD from AIIMS Delhi. Specializes in chronic disease management." },
-    { id: 2, name: "Dr. Rajesh Patel", specialization: "Pediatrics", experience: "12+ years", details: "MBBS, DCH from KEM Hospital. Expert in newborn care and childhood diseases." },
-    { id: 3, name: "Dr. Ananya Gupta", specialization: "Dermatology", experience: "10+ years", details: "MBBS, MD (Dermatology) from PGIMER. Specializes in cosmetic dermatology." },
-    { id: 4, name: "Dr. Vikram Mehta", specialization: "Orthopedics", experience: "20+ years", details: "MBBS, MS (Ortho) from CMC Vellore. Expert in joint replacements and sports injuries." }
+    { id: 1, name: "Dr. Priya Patel", specialization: "General Medicine", experience: "10+ years", details: "MBBS, MD from AIIMS Delhi. Specializes in chronic disease management." },
+    { id: 2, name: "Dr. Vivek Gupta", specialization: "Pediatrics", experience: "12+ years", details: "MBBS, DCH from KEM Hospital. Expert in newborn care and childhood diseases." },
+    { id: 3, name: "Dr. Arjun Nair", specialization: "Dermatology", experience: "13+ years", details: "MBBS, MD (Dermatology) from PGIMER. Specializes in cosmetic dermatology." },
+    { id: 4, name: "Dr. Nithin Choudhary", specialization: "Orthopedics", experience: "21+ years", details: "MBBS, MS (Ortho) from CMC Vellore. Expert in joint replacements and sports injuries." }
   ];
 
   // Sample accreditations - will need backend integration
@@ -53,7 +53,7 @@ const HomePage = () => {
         <div className="intro-image">
           {/* Image placeholder */}
           <div className="image-placeholder">
-            <p>Clinic Image</p>
+            <img src="src\assets\istockphoto-1425453868-612x612.jpg" alt="Clinic Picture"/>
           </div>
         </div>
       </section>

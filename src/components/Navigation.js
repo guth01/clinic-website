@@ -4,6 +4,7 @@ import './Navigation.css';
 const Navigation = () => {
   return (
     <nav className="nav-menu">
+      <a href="/home">Home</a>
       <a href="/pharmacy">Pharmacy</a>
       <a href="/doctors">Find a Doctor</a>
       <a href="/symptoms">Get Diagnosis</a>
