@@ -21,12 +21,6 @@ const ProfileContent = () => {
     { id: 2, date: '2025-04-22', time: '2:15 PM', doctor: 'Dr. Michael Chen', department: 'Dermatology', status: 'Pending' }
   ];
 
-  // Mock pharmacy history - this would be fetched from your backend
-  const pharmacyHistory = [
-    { id: 101, date: '2025-03-15', items: ['Amoxicillin 500mg', 'Ibuprofen 200mg'], total: '$42.50', status: 'Delivered' },
-    { id: 102, date: '2025-02-28', items: ['Lisinopril 10mg', 'Multivitamin Complex'], total: '$65.75', status: 'Picked up' }
-  ];
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -206,7 +200,7 @@ const ProfileContent = () => {
                       </span>
                     </td>
                     <td>
-                      <a href="#" className="action-link">View Details</a>
+                      <a href="#" className="action-link">CANCEL</a>
                     </td>
                   </tr>
                 ))}
@@ -224,64 +218,6 @@ const ProfileContent = () => {
         {/* API integration placeholder */}
         <div className="api-placeholder">
           {/* <!-- Appointments will be fetched from backend API --> */}
-        </div>
-      </section>
-
-      {/* Pharmacy History Section */}
-      <section className="content-card">
-        <h2 className="section-title">Your Pharmacy Bucket</h2>
-        {pharmacyHistory.length > 0 ? (
-          <div className="table-container">
-            <table className="data-table">
-              <thead>
-                <tr>
-                  <th>Order ID</th>
-                  <th>Date</th>
-                  <th>Items</th>
-                  <th>Total</th>
-                  <th>Status</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {pharmacyHistory.map(order => (
-                  <tr key={order.id}>
-                    <td>#{order.id}</td>
-                    <td>{order.date}</td>
-                    <td>
-                      <ul className="item-list">
-                        {order.items.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    </td>
-                    <td>{order.total}</td>
-                    <td>
-                      <span className={`status-badge ${
-                        order.status === 'Delivered' ? 'status-delivered' : 'status-pickup'
-                      }`}>
-                        {order.status}
-                      </span>
-                    </td>
-                    <td>
-                      <a href="#" className="action-link">View Details</a>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        ) : (
-          <p className="no-data-message">You have no pharmacy orders yet.</p>
-        )}
-        <div className="action-container">
-          <button className="primary-btn">
-            Visit Pharmacy
-          </button>
-        </div>
-        {/* API integration placeholder */}
-        <div className="api-placeholder">
-          {/* <!-- Pharmacy history will be fetched from backend API --> */}
         </div>
       </section>
     </main>

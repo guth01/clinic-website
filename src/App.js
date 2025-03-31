@@ -10,6 +10,7 @@ import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import ProtectedRoute from './components/auth/ProtectedRoute.js';
 import Yourprofile from './main_pages/Yourprofile.js';
+import PharmacyPage from './main_pages/PharmacyPage.js';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/pharmacy" element={<PharmacyPage />} />
           <Route path="/doctors" element={<DoctorsPage />} />
           <Route path="/book-test" element={
           <ProtectedRoute>
