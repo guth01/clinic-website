@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './HomePage.css';
+import pico from '../assets/doctors.jpg';
 
 const HomePage = () => {
   // Sample service data - will need backend integration
@@ -53,7 +54,7 @@ const HomePage = () => {
         <div className="intro-image">
           {/* Image placeholder */}
           <div className="image-placeholder">
-            <img src="src\assets\istockphoto-1425453868-612x612.jpg" alt="Clinic Picture"/>
+            <img src={pico} alt="Clinic Picture" className='image-placeholder'/>
           </div>
         </div>
       </section>
