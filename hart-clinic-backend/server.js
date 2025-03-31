@@ -4,6 +4,10 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.js';
 import appointmentRoutes from './routes/appointment.js';
+// Add this with your other requires
+import diagnosisRoutes from './routes/diagnosis.js';
+
+
 
 dotenv.config();
 
@@ -21,6 +25,8 @@ mongoose.connect(process.env.MONGODB_URI)
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/appointments', appointmentRoutes);
+// Add this with your other app.use statements
+app.use('/api/diagnosis', diagnosisRoutes);
 
 // Simple route for testing
 app.get('/', (req, res) => {
