@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/Authcontext.js';
-import Navigation from './Navigation'; // Import your Navigation component
+import Navigation from './Navigation'; 
 import './Header.css';
 import logo from '../assets/logo.jpg';
 
