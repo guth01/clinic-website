@@ -28,12 +28,7 @@ app.use('/api/appointments', appointmentRoutes);
 // Add this with your other app.use statements
 app.use('/api/diagnosis', diagnosisRoutes);
 app.use('/api/users', userRoutes);
-app.use('/api/users', userappointmentRoutes);
-
-// Simple route for testing
-app.get('/', (req, res) => {
-  res.send('Hart Clinic API is running');
-});
+app.use('/api/user-appointments', userappointmentRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
