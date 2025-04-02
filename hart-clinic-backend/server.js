@@ -6,8 +6,8 @@ import authRoutes from './routes/auth.js';
 import appointmentRoutes from './routes/appointment.js';
 // Add this with your other requires
 import diagnosisRoutes from './routes/diagnosis.js';
-
-
+import userRoutes from './routes/userRoutes.js';
+import userappointmentRoutes from './routes/userappointmentRoutes.js';
 
 dotenv.config();
 
@@ -27,6 +27,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/appointments', appointmentRoutes);
 // Add this with your other app.use statements
 app.use('/api/diagnosis', diagnosisRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/users', userappointmentRoutes);
 
 // Simple route for testing
 app.get('/', (req, res) => {
