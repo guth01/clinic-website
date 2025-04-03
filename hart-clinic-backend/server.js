@@ -9,7 +9,7 @@ import userRoutes from './routes/userRoutes.js';
 import userappointmentRoutes from './routes/userappointmentRoutes.js';
 // Import the new analytics routes
 import analyticsRoutes from './routes/analyticRoutes.js';
-
+import pharmacyRoutes from './routes/pharmacyRoutes.js';
 dotenv.config();
 
 const app = express();
@@ -32,7 +32,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/user-appointments', userappointmentRoutes);
 // Add the new analytics routes
 app.use('/api/analytics', analyticsRoutes);
-
+app.use('/api/pharmacy', pharmacyRoutes);
 // Basic route for testing
 app.get('/', (req, res) => {
   res.send('HART Clinic API is running');
