@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './HomePage.css';
 import pico from '../assets/doctors.jpg';
+import ClinicAnalytics from './ClinicAnalytics';
 
 const HomePage = () => {
   // Sample service data - will need backend integration
@@ -77,6 +78,9 @@ const HomePage = () => {
           ))}
         </div>
       </section>
+
+      {/* Clinic Analytics - NEW SECTION */}
+      <ClinicAnalytics />
 
       {/* Our Doctors Section */}
       <section className="doctors-section">
