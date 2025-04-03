@@ -67,7 +67,7 @@ const ClinicAnalytics = () => {
       <h2>Clinic Analytics</h2>
       <div className="analytics-container">
         <div className="chart-container">
-          <h3>Appointment Distribution by Department</h3>
+          <h3>Average Appointment Distribution per month by Department</h3>
           <ResponsiveContainer width="100%" height={400}>
             <PieChart>
               <Pie
@@ -92,7 +92,7 @@ const ClinicAnalytics = () => {
         </div>
         
         <div className="chart-container">
-          <h3>Patient Traffic Throughout the Day</h3>
+          <h3>Average Patient Traffic Throughout the Day</h3>
           <ResponsiveContainer width="100%" height={400}>
             <BarChart
               data={trafficData}
