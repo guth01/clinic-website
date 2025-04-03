@@ -1,155 +1,204 @@
 .appointment-page {
-    padding: 2rem 0;
-    background-color: #f5f7f9;
-  }
-  
-  .page-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-  
-  .appointment-page h1 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    text-align: center;
-  }
-  
-  .intro-text {
-    text-align: center;
-    color: #5a6a7a;
-    margin-bottom: 2rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .appointment-form {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .form-section {
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #eaedf0;
-    padding-bottom: 1.5rem;
-  }
-  
-  .form-section:last-child {
-    border-bottom: none;
-  }
-  
-  .form-section h2 {
-    color: #3498db;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .form-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1.5rem;
-    flex: 1 1 300px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: #2c3e50;
-    font-weight: 500;
-  }
-  
-  input, select, textarea {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid #dbe0e4;
-    border-radius: 4px;
-    font-size: 1rem;
-    color: #2c3e50;
-    transition: border-color 0.3s;
-  }
-  
-  input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
-  }
-  
-  textarea {
-    min-height: 100px;
-    resize: vertical;
-  }
-  
-  .required {
-    color: #e74c3c;
-  }
-  
-  .terms-policy {
-    margin-bottom: 2rem;
-    text-align: center;
-    color: #5a6a7a;
-  }
-  
-  .terms-policy a {
-    color: #3498db;
-    text-decoration: none;
-  }
-  
-  .terms-policy a:hover {
-    text-decoration: underline;
-  }
-  
+  padding: 2rem 0;
+  background-color: #f5f7f9;
+}
+
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.appointment-page h1 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.intro-text {
+  text-align: center;
+  color: #5a6a7a;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.appointment-form {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eaedf0;
+  padding-bottom: 1.5rem;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+}
+
+.form-section h2 {
+  color: #3498db;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  flex: 1 1 300px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #dbe0e4;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #2c3e50;
+  transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.required {
+  color: #e74c3c;
+}
+
+.terms-policy {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #5a6a7a;
+}
+
+.terms-policy a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.terms-policy a:hover {
+  text-decoration: underline;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.primary-button, .secondary-button {
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.primary-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+}
+
+.primary-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.primary-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.secondary-button {
+  background-color: #f5f7f9;
+  color: #5a6a7a;
+  border: 1px solid #dbe0e4;
+}
+
+.secondary-button:hover {
+  background-color: #e9edf0;
+  transform: translateY(-2px);
+}
+
+/* Error styles */
+.error-text {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.error-input {
+  border-color: #e74c3c;
+  background-color: #fdf2f2;
+}
+
+.error-input:focus {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+}
+
+.message {
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.message.success {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+
+.message.error {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
+}
+
+@media (max-width: 768px) {
   .form-actions {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+    flex-direction: column;
   }
   
   .primary-button, .secondary-button {
-    padding: 0.75rem 2rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
   }
   
-  .primary-button {
-    background-color: #3498db;
-    color: white;
-    border: none;
+  .form-row {
+    flex-direction: column;
+    gap: 0;
   }
-  
-  .primary-button:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-  }
-  
-  .secondary-button {
-    background-color: #f5f7f9;
-    color: #5a6a7a;
-    border: 1px solid #dbe0e4;
-  }
-  
-  .secondary-button:hover {
-    background-color: #e9edf0;
-    transform: translateY(-2px);
-  }
-  
-  @media (max-width: 768px) {
-    .form-actions {
-      flex-direction: column;
-    }
-    
-    .primary-button, .secondary-button {
-      width: 100%;
-    }
-  }
+}

@@ -63,14 +63,32 @@ const AppointmentBookingPage = () => {
   const validateForm = () => {
     const newErrors = {};
     
-    // Validate contact number (10-15 digits)
-    if (!/^\d{10,15}$/.test(formData.contactNumber)) {
-      newErrors.contactNumber = 'Contact number must be 10-15 digits';
+    // Check for required fields (except medical information)
+    const requiredFields = [
+      'fullName', 'dateOfBirth', 'gender', 'contactNumber',
+      'email', 'preferredDate', 'preferredTime', 'reasonForAppointment',
+      'preferredDepartment'
+    ];
+    
+    requiredFields.forEach(field => {
+      if (!formData[field].trim()) {
+        newErrors[field] = `${field.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())} is required`;
+      }
+    });
+    
+    if (formData.fullName && !/^[A-Za-z\s]+$/.test(formData.fullName)) {
+      newErrors.fullName = 'Name should contain only alphabets and spaces';
+    }
+
+    
+    // Validate contact number (exactly 10 digits)
+    if (formData.contactNumber && !/^\d{10}$/.test(formData.contactNumber)) {
+      newErrors.contactNumber = 'Contact number must be exactly 10 digits';
     }
     
-    // Validate email
-    if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      newErrors.email = 'Invalid email format';
+    // Validate email format (must include @ and .com)
+    if (formData.email && (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) || !formData.email.includes('.com'))) {
+      newErrors.email = 'Please enter a valid email address including @example.com';
     }
     
     setErrors(newErrors);
@@ -79,10 +97,20 @@ const AppointmentBookingPage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
+    
+    // Apply special validation for contact number (only allow digits)
+    if (name === 'contactNumber' && value !== '') {
+      const digitsOnly = value.replace(/\D/g, '');
+      setFormData(prevState => ({
+        ...prevState,
+        [name]: digitsOnly
+      }));
+    } else {
+      setFormData(prevState => ({
+        ...prevState,
+        [name]: value
+      }));
+    }
 
     // Clear error for this field when the user makes changes
     if (errors[name]) {
@@ -104,6 +132,13 @@ const AppointmentBookingPage = () => {
     e.preventDefault();
     
     if (!validateForm()) {
+      // Scroll to the first error
+      const firstErrorField = Object.keys(errors)[0];
+      const errorElement = document.getElementById(firstErrorField);
+      if (errorElement) {
+        errorElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        errorElement.focus();
+      }
       return;
     }
     
@@ -175,24 +210,47 @@ const AppointmentBookingPage = () => {
             
             <div className="form-group">
               <label htmlFor="fullName">Full Name <span className="required">*</span></label>
-              <input type="text" id="fullName" name="fullName" value={formData.fullName} onChange={handleChange} required />
+              <input 
+                type="text" 
+                id="fullName" 
+                name="fullName" 
+                value={formData.fullName} 
+                onChange={handleChange} 
+                className={errors.fullName ? "error-input" : ""}
+              />
+              {errors.fullName && <p className="error-text">{errors.fullName}</p>}
             </div>
 
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="dateOfBirth">Date of Birth <span className="required">*</span></label>
-                <input type="date" id="dateOfBirth" name="dateOfBirth" value={formData.dateOfBirth} onChange={handleChange} required />
+                <input 
+                  type="date" 
+                  id="dateOfBirth" 
+                  name="dateOfBirth" 
+                  value={formData.dateOfBirth} 
+                  onChange={handleChange} 
+                  className={errors.dateOfBirth ? "error-input" : ""}
+                />
+                {errors.dateOfBirth && <p className="error-text">{errors.dateOfBirth}</p>}
               </div>
 
               <div className="form-group">
                 <label htmlFor="gender">Gender <span className="required">*</span></label>
-                <select id="gender" name="gender" value={formData.gender} onChange={handleChange} required>
+                <select 
+                  id="gender" 
+                  name="gender" 
+                  value={formData.gender} 
+                  onChange={handleChange} 
+                  className={errors.gender ? "error-input" : ""}
+                >
                   <option value="">Select Gender</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                   <option value="other">Other</option>
                   <option value="prefer-not-to-say">Prefer not to say</option>
                 </select>
+                {errors.gender && <p className="error-text">{errors.gender}</p>}
               </div>
             </div>
 
@@ -204,8 +262,10 @@ const AppointmentBookingPage = () => {
                   id="contactNumber" 
                   name="contactNumber" 
                   value={formData.contactNumber} 
-                  onChange={handleChange} 
-                  required 
+                  onChange={handleChange}
+                  placeholder="10-digit number"
+                  className={errors.contactNumber ? "error-input" : ""}
+                  maxLength="10"
                 />
                 {errors.contactNumber && <p className="error-text">{errors.contactNumber}</p>}
               </div>
@@ -217,8 +277,9 @@ const AppointmentBookingPage = () => {
                   id="email" 
                   name="email" 
                   value={formData.email} 
-                  onChange={handleChange} 
-                  required 
+                  onChange={handleChange}
+                  placeholder="example@domain.com"
+                  className={errors.email ? "error-input" : ""}
                 />
                 {errors.email && <p className="error-text">{errors.email}</p>}
               </div>
@@ -236,9 +297,11 @@ const AppointmentBookingPage = () => {
                   id="preferredDate" 
                   name="preferredDate" 
                   value={formData.preferredDate} 
-                  onChange={handleChange} 
-                  required 
+                  onChange={handleChange}
+                  className={errors.preferredDate ? "error-input" : ""}
+                  min={new Date().toISOString().split('T')[0]} // Prevent past dates
                 />
+                {errors.preferredDate && <p className="error-text">{errors.preferredDate}</p>}
               </div>
 
               <div className="form-group">
@@ -247,14 +310,15 @@ const AppointmentBookingPage = () => {
                   id="preferredTime" 
                   name="preferredTime" 
                   value={formData.preferredTime} 
-                  onChange={handleChange} 
-                  required
+                  onChange={handleChange}
+                  className={errors.preferredTime ? "error-input" : ""}
                 >
                   <option value="">Select Time</option>
                   <option value="morning">Morning (9:00 AM - 12:00 PM)</option>
                   <option value="afternoon">Afternoon (1:00 PM - 5:00 PM)</option>
                   <option value="evening">Evening (6:00 PM - 8:00 PM)</option>
                 </select>
+                {errors.preferredTime && <p className="error-text">{errors.preferredTime}</p>}
               </div>
             </div>
 
@@ -264,15 +328,17 @@ const AppointmentBookingPage = () => {
                 id="reasonForAppointment" 
                 name="reasonForAppointment" 
                 value={formData.reasonForAppointment} 
-                onChange={handleChange} 
-                required
+                onChange={handleChange}
+                className={errors.reasonForAppointment ? "error-input" : ""}
               >
+                <option value="">Select Reason</option>
                 <option value="General Checkup">General Checkup</option>
                 <option value="Follow-up">Follow-up</option>
                 <option value="Consultation">Consultation</option>
                 <option value="Specialist Referral">Specialist Referral</option>
                 <option value="Urgent Care">Urgent Care</option>
               </select>
+              {errors.reasonForAppointment && <p className="error-text">{errors.reasonForAppointment}</p>}
             </div>
 
             <div className="form-group">
@@ -281,14 +347,15 @@ const AppointmentBookingPage = () => {
                 id="preferredDepartment" 
                 name="preferredDepartment" 
                 value={formData.preferredDepartment} 
-                onChange={handleChange} 
-                required
+                onChange={handleChange}
+                className={errors.preferredDepartment ? "error-input" : ""}
               >
                 <option value="">Select Department</option>
                 {departments.map(dept => (
                   <option key={dept} value={dept}>{dept}</option>
                 ))}
               </select>
+              {errors.preferredDepartment && <p className="error-text">{errors.preferredDepartment}</p>}
             </div>
 
             <div className="form-group">
