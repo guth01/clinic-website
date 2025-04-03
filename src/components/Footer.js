@@ -26,15 +26,6 @@ const Footer = () => {
           <p>Email: info@hartclinic.com</p>
           <p>Phone: +91 1234567890</p>
         </div>
-        <div className="footer-social">
-          <h4>Connect With Us</h4>
-          <div className="social-icons">
-            <a href="#" className="social-icon">📘</a> {/* Facebook */}
-            <a href="#" className="social-icon">📷</a> {/* Instagram */}
-            <a href="#" className="social-icon">📱</a> {/* Twitter/X */}
-            <a href="#" className="social-icon">📹</a> {/* YouTube */}
-          </div>
-        </div>
       </div>
       <div className="footer-bottom">
         <p>&copy; {new Date().getFullYear()} HART Clinic. All Rights Reserved.</p>
