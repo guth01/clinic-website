@@ -41,10 +41,10 @@
   justify-content: center;
 }
 
-/* UPDATED BANNER IMAGE STYLING FOR BETTER ALIGNMENT */
+/* UPDATED BANNER IMAGE STYLING TO SHOW COMPLETE IMAGE */
 .banner-image-container {
   width: 100%;
-  height: 280px;
+  height: 320px; /* Increased height to accommodate the full image */
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
@@ -53,8 +53,9 @@
 .banner-image {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Changed from cover to contain */
-  transform: scale(0.9); /* Zoomed out to show more of the image */
+  object-fit: contain; /* Changed back to contain to show the whole image */
+  object-position: center; /* Ensure image is centered */
+  background-color: #f8f9fa; /* Optional: background color that matches your design */
   transition: transform 0.5s ease;
 }
 
