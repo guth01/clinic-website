@@ -1,4 +1,3 @@
-// routes/analyticsRoutes.js
 
 import express from 'express';
 import clinicStats from '../data/clinicStats.js';

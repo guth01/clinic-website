@@ -44,7 +44,6 @@ export const cancelAppointment = async (req, res) => {
     const userId = decoded.userId;
     
     // First get the user to find their email
-    // Changed from require to using the already imported User model
     const user = await User.findById(userId);
     
     if (!user) {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './HomePage.css';
-import pico from '../assets/doctors.jpg';
+import pico from '../assets/indian_doctors.jpg';
 import priya from '../assets/Priya Patel.jpg';
 import nithin from '../assets/Nithin Choudhary.jpg';
 import arjun from '../assets/Arjun Nair.png';
@@ -47,14 +47,12 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      {/* Clinic Introduction */}
       <section className="clinic-intro">
         <div className="intro-text">
           <h2>Welcome to HART Clinic</h2>
           <p>At HART Clinic, we combine cutting-edge medical technology with compassionate care to provide exceptional healthcare services. Our team of experienced healthcare professionals is committed to improving the health and wellbeing of our community by delivering personalized treatment plans in a comfortable and welcoming environment.</p>
         </div>
         <div className="intro-image">
-          {/* Banner image with different styling from doctor images */}
           <div className="banner-image-container">
             <img src={pico} alt="HART Clinic Doctors" className="banner-image" />
           </div>
@@ -79,11 +77,8 @@ const HomePage = () => {
           ))}
         </div>
       </section>
-
-      {/* Clinic Analytics - NEW SECTION */}
       <ClinicAnalytics />
 
-      {/* Our Doctors Section */}
       <section className="doctors-section">
         <h2>Our Doctors</h2>
         <div className="doctors-grid">
@@ -101,7 +96,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Clinic Accreditations */}
+
       <section className="accreditations-section">
         <h2>Our Accreditations</h2>
         <div className="accreditations-list">

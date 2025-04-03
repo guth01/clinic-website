@@ -7,7 +7,6 @@ import appointmentRoutes from './routes/appointment.js';
 import diagnosisRoutes from './routes/diagnosis.js';
 import userRoutes from './routes/userRoutes.js';
 import userappointmentRoutes from './routes/userappointmentRoutes.js';
-// Import the new analytics routes
 import analyticsRoutes from './routes/analyticRoutes.js';
 import pharmacyRoutes from './routes/pharmacyRoutes.js';
 dotenv.config();
@@ -30,7 +29,6 @@ app.use('/api/appointments', appointmentRoutes);
 app.use('/api/diagnosis', diagnosisRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/user-appointments', userappointmentRoutes);
-// Add the new analytics routes
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/pharmacy', pharmacyRoutes);
 // Basic route for testing
