@@ -173,47 +173,47 @@ const DoctorsPage = () => {
       specialty: "Dental Implants"
     },
     
-    // Cardiology
+    // Physiotherapy
     {
       id: 21,
       name: "Dr. Amit Bansal",
-      department: "Cardiology",
+      department: "Physiotherapy",
       experience: "23 years",
-      education: "MBBS, MD, DM (Cardiology)",
-      specialty: "Interventional Cardiology"
+      education: "MBBS, MD, DM (Physiotherapy)",
+      specialty: "Interventional Physiotherapy"
     },
     {
       id: 22,
       name: "Dr. Sarita Mishra",
-      department: "Cardiology",
+      department: "Physiotherapy",
       experience: "19 years",
-      education: "MBBS, MD, DNB (Cardiology)",
-      specialty: "Preventive Cardiology"
+      education: "MBBS, MD, DNB (Physiotherapy)",
+      specialty: "Preventive Physiotherapy"
     },
     
-    // Orthopedics
+    // Gynecology
     {
       id: 23,
       name: "Dr. Nitin Choudhary",
-      department: "Orthopedics",
+      department: "Gynecology",
       experience: "21 years",
-      education: "MBBS, MS (Orthopedics)",
-      specialty: "Joint Replacement"
+      education: "MBBS, MS (Gynecology)",
+      specialty: "Senior Doctor"
     },
     {
       id: 24,
       name: "Dr. Pooja Sharma",
-      department: "Orthopedics",
+      department: "Gynecology",
       experience: "16 years",
-      education: "MBBS, DNB (Orthopedics)",
-      specialty: "Sports Medicine"
+      education: "MBBS, DNB (Gynecology)",
+      specialty: "Woman Health"
     },
     
-    // Neurology
+    // Mental Health and Counselling
     {
       id: 25,
       name: "Dr. Alok Srivastava",
-      department: "Neurology",
+      department: "Mental Health and Counselling",
       experience: "24 years",
       education: "MBBS, MD, DM (Neurology)",
       specialty: "Movement Disorders"
@@ -221,28 +221,26 @@ const DoctorsPage = () => {
     {
       id: 26,
       name: "Dr. Rekha Menon",
-      department: "Neurology",
+      department: "Mental Health and Counselling",
       experience: "18 years",
       education: "MBBS, MD, DNB (Neurology)",
       specialty: "Epilepsy Management"
     },
-    
-    // Ophthalmology
     {
       id: 27,
       name: "Dr. Karan Malik",
-      department: "Ophthalmology",
+      department: "Mental Health and Counselling",
       experience: "17 years",
       education: "MBBS, MS (Ophthalmology)",
-      specialty: "Cataract Surgery"
+      specialty: "PTSD Recovery"
     },
     {
       id: 28,
       name: "Dr. Shweta Gandhi",
-      department: "Ophthalmology",
+      department: "Mental Health and Counselling",
       experience: "14 years",
       education: "MBBS, DNB (Ophthalmology)",
-      specialty: "Pediatric Ophthalmology"
+      specialty: "Pediatric"
     }
   ];
 

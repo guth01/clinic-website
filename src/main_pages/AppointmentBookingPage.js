@@ -25,7 +25,7 @@ const AppointmentBookingPage = () => {
 
   // Mock data for departments and doctors
   const departments = [
-    'General Medicine', 'ENT', 'Dermatology', 'Pediatrics', 'Cardiology', 'Orthopedics'
+    'General Medicine', 'ENT', 'Dermatology', 'Pediatrics', 'Physiotherapy','Dentistry', 'Gynaecology','Mental Health and Counselling'
   ];
 
   const doctors = {
@@ -33,8 +33,10 @@ const AppointmentBookingPage = () => {
     'ENT': ['Dr. Suresh Menon', 'Dr. Deepika Malhotra', 'Dr. Ramesh Joshi', 'Dr. Kavita Reddy'],
     'Dermatology': ['Dr. Sanjay Khanna', 'Dr. Meera Iyer', 'Dr. Arjun Nair', 'Dr. Sunita Agarwal'],
     'Pediatrics': ['Dr. Rahul Mehta', 'Dr. Lakshmi Rao', 'Dr. Vivek Gupta', 'Dr. Neha Verma'],
-    'Cardiology': ['Dr. Amit Bansal', 'Dr. Sarita Mishra', 'Dr. Nitin Choudhary', 'Dr. Pooja Sharma'],
-    'Orthopedics': ['Dr. Manish Saxena', 'Dr. Anjali Deshmukh']
+    'Physiotherapy': ['Dr. Amit Bansal', 'Dr. Sarita Mishra', 'Dr. Nitin Choudhary', 'Dr. Pooja Sharma'],
+    'Dentistry':['Dr. Rohan Desai','Dr. Anjali Jain','Dr. Tarun Kapoor','Dr. Mira Bose'],
+    'Gynaecology': ['Dr. Nithin Choudhary', 'Dr. Pooja Sharma'],
+    'Mental Health and Counselling':['Dr. Alok Srivastava','Dr. Rekha Menon','Dr. Karan Malik','Dr. Shweta Gandhi']
   };
 
   // Convert gender value to match the schema enum

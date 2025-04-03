@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import './HomePage.css';
 import pico from '../assets/doctors.jpg';
+import priya from '../assets/Priya Patel.jpg';
+import nithin from '../assets/Nithin Choudhary.jpg';
+import arjun from '../assets/Arjun Nair.png';
+import vivek from '../assets/Vivek Gupta.jpg';
 import ClinicAnalytics from './ClinicAnalytics';
 
 const HomePage = () => {
-  // Sample service data - will need backend integration
   const services = [
     { id: 1, name: "General Medicine", description: "Comprehensive healthcare for adults including diagnosis and treatment of various diseases and preventive care." },
     { id: 2, name: "ENT", description: "Specialized care for ear, nose, throat, and related structures of the head and neck." },
@@ -17,21 +20,19 @@ const HomePage = () => {
       name: "Gynecology", 
       description: "Women's healthcare services, including reproductive health, prenatal care, and treatment for gynecological conditions." 
     },
-    
     { 
       id: 8, 
       name: "Mental Health & Counseling", 
       description: "Providing psychological support, therapy, and counseling for individuals dealing with stress, anxiety, depression, and other mental health concerns." 
     }
-    
   ];
 
-  // Sample doctor data - will need backend integration
+  // Sample doctor data with image references
   const doctors = [
-    { id: 1, name: "Dr. Priya Patel", specialization: "General Medicine", experience: "10+ years", details: "MBBS, MD from AIIMS Delhi. Specializes in chronic disease management." },
-    { id: 2, name: "Dr. Vivek Gupta", specialization: "Pediatrics", experience: "12+ years", details: "MBBS, DCH from KEM Hospital. Expert in newborn care and childhood diseases." },
-    { id: 3, name: "Dr. Arjun Nair", specialization: "Dermatology", experience: "13+ years", details: "MBBS, MD (Dermatology) from PGIMER. Specializes in cosmetic dermatology." },
-    { id: 4, name: "Dr. Nithin Choudhary", specialization: "Orthopedics", experience: "21+ years", details: "MBBS, MS (Ortho) from CMC Vellore. Expert in joint replacements and sports injuries." }
+    { id: 1, name: "Dr. Priya Patel", specialization: "General Medicine", experience: "10+ years", details: "MBBS, MD from AIIMS Delhi. Specializes in chronic disease management.", image: priya },
+    { id: 2, name: "Dr. Vivek Gupta", specialization: "Pediatrics", experience: "12+ years", details: "MBBS, DCH from KEM Hospital. Expert in newborn care and childhood diseases.", image: vivek },
+    { id: 3, name: "Dr. Arjun Nair", specialization: "Dermatology", experience: "13+ years", details: "MBBS, MD (Dermatology) from PGIMER. Specializes in cosmetic dermatology.", image: arjun },
+    { id: 4, name: "Dr. Nithin Choudhary", specialization: "Dentistry", experience: "21+ years", details: "BDS, MD from CMC Vellore. Expert in root canal.", image: nithin }
   ];
 
   // Sample accreditations - will need backend integration
@@ -53,9 +54,9 @@ const HomePage = () => {
           <p>At HART Clinic, we combine cutting-edge medical technology with compassionate care to provide exceptional healthcare services. Our team of experienced healthcare professionals is committed to improving the health and wellbeing of our community by delivering personalized treatment plans in a comfortable and welcoming environment.</p>
         </div>
         <div className="intro-image">
-          {/* Image placeholder */}
-          <div className="image-placeholder">
-            <img src={pico} alt="Clinic Picture" className='image-placeholder'/>
+          {/* Banner image with different styling from doctor images */}
+          <div className="banner-image-container">
+            <img src={pico} alt="HART Clinic Doctors" className="banner-image" />
           </div>
         </div>
       </section>
@@ -89,7 +90,7 @@ const HomePage = () => {
           {doctors.map(doctor => (
             <div key={doctor.id} className="doctor-card">
               <div className="doctor-image-placeholder">
-                <p>Dr. Image</p>
+                <img src={doctor.image} alt={doctor.name} className="doctor-image" />
               </div>
               <h3>{doctor.name}</h3>
               <p className="specialization">{doctor.specialization}</p>
