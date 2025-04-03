@@ -1,4 +1,3 @@
-// data/pharmacyData.js
 
 const medicines = [
     { id: 1, name: "Paracetamol 500mg", price: 25, stock: Math.floor(Math.random() * 50) + 10, category: "Pain Relief" },

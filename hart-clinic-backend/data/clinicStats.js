@@ -1,4 +1,3 @@
-// data/clinicStats.js
 
 const clinicStats = {
     appointmentsByDepartment: [
