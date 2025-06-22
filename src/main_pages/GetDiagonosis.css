@@ -1,106 +1,157 @@
 .diagnosis-page {
-    padding: 20px;
-  }
-  
-  .diagnosis-container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .diagnosis-container h1 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #34495e;
-  }
-  
-  .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    resize: vertical;
-  }
-  
-  .button-group {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .button-group button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-  }
-  
-  .button-group button[type="submit"] {
-    background-color: #3498db;
-    color: white;
-  }
-  
-  .button-group button[type="submit"]:hover {
-    background-color: #2980b9;
-  }
-  
-  .button-group button[type="button"] {
-    background-color: #e74c3c;
-    color: white;
-  }
-  
-  .button-group button[type="button"]:hover {
-    background-color: #c0392b;
-  }
-  
-  .button-group button:disabled {
-    background-color: #95a5a6;
-    cursor: not-allowed;
-  }
-  
-  .diagnosis-result {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 4px;
-    border-left: 4px solid #3498db;
-  }
-  
-  .diagnosis-result h2 {
-    color: #2c3e50;
-    margin-bottom: 15px;
-  }
-  
-  .diagnosis-content {
-    margin-bottom: 20px;
-    line-height: 1.6;
-  }
-  
-  .disclaimer {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-radius: 4px;
-    border-left: 4px solid #f39c12;
-  }
-  
-  .disclaimer p {
-    margin: 0;
-    font-size: 14px;
-    color: #555;
-  }
+  padding: 20px;
+}
+
+.diagnosis-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.diagnosis-container h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.diagnosis-container p {
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 16px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #34495e;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: vertical;
+  min-height: 120px;
+}
+
+.example-buttons {
+  margin-bottom: 20px;
+}
+
+.example-buttons h4 {
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+.example-btn {
+  display: inline-block;
+  margin: 5px 8px 5px 0;
+  padding: 8px 12px;
+  border-radius: 20px;
+  background-color: #ecf0f1;
+  border: 1px solid #ccc;
+  color: #2c3e50;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.example-btn:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button-group button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.button-group button[type="submit"] {
+  background-color: #3498db;
+  color: white;
+}
+
+.button-group button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+.button-group button[type="button"] {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.button-group button[type="button"]:hover {
+  background-color: #c0392b;
+}
+
+.button-group button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.diagnosis-result {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  border-left: 4px solid #3498db;
+}
+
+.diagnosis-result h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.diagnosis-content {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.diagnosis-text {
+  white-space: pre-wrap;
+  font-family: monospace;
+  color: #333;
+  font-size: 15px;
+}
+
+.disclaimer {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border-left: 4px solid #f39c12;
+}
+
+.disclaimer p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.error-message {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fdecea;
+  color: #c0392b;
+  border-left: 4px solid #e74c3c;
+  border-radius: 4px;
+}
