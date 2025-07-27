@@ -54,13 +54,6 @@
 - Making more dashboard content **dynamically populated** from real-time sources  
 - Deploying both the frontend and backend for public access  
 - Improved admin panel and role-based access control  
-- Optional chatbot interface for diagnosis and FAQs
-
----
-
-## 🚀 Getting Started (Local Setup)
-
-> Coming soon: deployment guide and environment config instructions.
 
 ---
 
